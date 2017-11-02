@@ -1,0 +1,252 @@
+/*-----------Menu principal----------------*/
+*{
+  margin:0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+body{
+  background: #BFC9CA;
+}
+.menuBar{
+  display:none;
+}
+header{
+  width: 100%;
+}
+header nav{
+  width: 90%;
+  max-width: 100%;
+  margin: 20px, auto;
+  background: #1F618D;
+  z-index: 1000;
+}
+
+header nav ul{
+  list-style: none;
+}
+header nav ul li{
+  display: inline-block;
+  position: relative;
+}
+header nav ul li:hover{
+  background:#940429;
+}
+header nav ul li a{
+  color: #FFFFFF;
+  padding: 20px;
+  display:block;
+  text-decoration: none;
+}
+
+header nav ul li a span{
+  margin-right:10px;
+}
+
+/*--------------------sub menu--------------------*/
+header nav ul li:hover .category{
+  display: block;
+
+}
+header nav ul li .category{
+  display: none;
+  position: absolute;
+  width: 150%;
+  z-index: 1000;
+  background: #2E4C73;
+}
+header nav ul li .category li{
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+header nav ul li .category li a{
+  display: block;
+}
+header nav ul li .flecha{
+  position: relative;
+  top: auto;
+  margin-left: 50px;
+  margin-right: 0;
+}
+/*-----------------------responsive-----------------------*/
+@media screen and (max-width:700px) {
+  body{
+    padding-top: 80px;
+  }
+  header nav{
+    width: 80%;
+    height:calc(100% - 80px);
+    margin: 0;
+    position: fixed;
+    /*left: 0;*/
+    right: 100%;/*se esconde la pantalla*/
+    overflow: scroll;
+    transition: all 0.5s;
+
+  }
+
+  header nav ul li{
+    display: block;
+    border-bottom: 2px solid rgba(255, 225, 255, 0.5);
+  }
+  header nav ul li a {
+    display: block;
+  }
+  /*header nav ul li:hover .category{
+    display: none;
+  }*/
+  header nav ul li .category{
+    width: 100%;
+    position: relative;
+
+  }
+  header nav ul li .category li a{
+    margin-left: 20px;
+  }
+  header nav ul li .flecha{
+    float: right;
+  }
+
+  .menuBar{
+    display: block;
+    width: 100%;
+    background: #B5D3F1;
+    position: fixed;
+    top: 0;
+
+  }
+  .menuBar .btnMenu{
+    display: block;
+    padding: 20px;
+    background: #273746;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    overflow: hidden;
+    /*cursor: pointer;*/
+  /*  width: 100%; /*como boton*/
+    /*border: 0;  /*como boton*/
+    /*height: 80px;  /*como boton*/
+    /*text-align: left; /*como boton*/
+
+  }
+  .menuBar span {
+    float: right;
+    font-size: 40px;
+  }
+  .mostrar {
+    left: 0;
+  }
+  .bannerTxt {
+    display:none;
+  }
+}
+
+/*-----------------------Banner -----------------------*/
+/*-----------------------Info -----------------------*/
+.infoColum {
+  background: #FBA919;
+  color: #FFFFFF;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+/*-----------------------Login/Registro -----------------------*/
+.bodyLogin {
+  background: url(../img/banner.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.contenidoForm {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  max-width: 500px;
+  margin: 48px auto;
+  color: #FFFFFF;
+  border-radius: 5px;
+  /*padding: 40px;*/
+}
+.contenidoForm .registro{
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 100px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 25px;
+  text-align: center;
+  border-top: 2px solid #BA081E;
+  border-bottom: 2px solid #BA081E;
+  transition: all 0.5s;
+}
+.contenidoForm .registro button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+.contenidoForm .registro:hover{
+  border-top: 2px solid #0075D9;
+  border-bottom: 2px solid #0075D9;
+}
+.contenidoForm h2{
+  margin: 0 0 28px 0;
+  font-size: 20px;
+  font-weight: 400 bold;
+  line-height: 1;
+
+}
+.contenidoForm input[type="text"],
+.contenidoForm input[type="password"],
+.contenidoForm input[type="email"]{
+  outline: none;
+  background: rgba(204, 209, 209, 0.3);
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 2px;
+  border-bottom: 4px solid #BA081E;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+  transition: all 0.5s;
+
+}
+.contenidoForm input[type="text"]:focus,
+.contenidoForm input[type="password"]:focus,
+.contenidoForm input[type="email"]:focus{
+  border-bottom: 4px solid #0075D9;
+}
+.contenidoForm input[type="submit"]{
+  background: #85C1E9;
+  color: #000000;
+  border: none;
+  width: 100%;
+  padding:10px 0;
+  font-weight: normal;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.contenidoForm input[type="submit"]:hover{
+  background: rgba(0, 117, 217, 0.5);
+
+}
+.contenidoForm .resetPass{
+  background: rgba(0, 117, 217, 0.5);
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.contenidoForm .resetPass a{
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 16px;
+}
